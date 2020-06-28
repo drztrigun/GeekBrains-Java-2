@@ -6,4 +6,7 @@ public interface Actions {
 
     void run();
 
+    int getDistance();
+
+    double getHieghtJump();
 }

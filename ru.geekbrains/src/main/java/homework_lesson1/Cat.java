@@ -22,10 +22,12 @@ public class Cat implements Actions {
         System.out.println("Кот " +  name + " Побежал");
     }
 
+    @Override
     public int getDistance(){        // передаем дистанцию атлета
         return this.runDistance;
     }
 
+    @Override
     public double getHieghtJump(){   // передаем высоту прыжка атлета
         return this.hieghtJump;
     }

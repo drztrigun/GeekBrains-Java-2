@@ -3,12 +3,12 @@ package homework_lesson1;
 public class Human implements Actions {
 
     private String name;
-    private int runDistance;
+    public int distance;
     private double hieghtJump;
 
     public Human(String name, int distance, double hieghtJump){
         this.name = name;
-        this.runDistance = distance;
+        this.distance = distance;
         this.hieghtJump = hieghtJump;
     }
 
@@ -22,10 +22,12 @@ public class Human implements Actions {
         System.out.println("Человек " +  this.name + " Побежал");
     }
 
+    @Override
     public int getDistance(){        // передаем дистанцию атлета
-        return this.runDistance;
+        return this.distance;
     }
 
+    @Override
     public double getHieghtJump(){   // передаем высоту прыжка атлета
         return this.hieghtJump;
     }
