@@ -4,29 +4,31 @@ public class Robot implements Actions {
 
     private String name;
     private int runDistance;
-    private double hieghtJump;
+    private double jumpHeight;
 
-    public Robot(String name, int distance, double hieghtJump){
+    public Robot(String name, int distance, double jumpHeight){
         this.name = name;
         this.runDistance = distance;
-        this.hieghtJump = hieghtJump;
+        this.jumpHeight = jumpHeight;
     }
 
-    @Override    //переписываем метод из интерфейса
+    @Override
     public void jump() {
-        System.out.println("Робот " +  name + " Прыгнул");
+        System.out.println(this.name + " Прыгнул");
     }
 
-    @Override   //переписываем метод из интерфейса
+    @Override
     public void run() {
-        System.out.println("Робот " +  name + " Побежал");
+        System.out.println(this.name + " Побежал");
     }
 
-    public int getDistance(){        // передаем дистанцию атлета
+    @Override
+    public int getDistance(){
         return this.runDistance;
     }
 
-    public double getHieghtJump(){   // передаем высоту прыжка атлета
-        return this.hieghtJump;
+    @Override
+    public double getHieghtJump(){
+        return this.jumpHeight;
     }
 }

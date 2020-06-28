@@ -50,15 +50,15 @@ public class MainClass {
         //создаем массив препятствий
         Barrier[] barriers = new Barrier[4];
         for (int i = 0; i < barriers.length; i++) {
-            if ((i + 2) % 2 == 0) {
+            if (i % 2 == 0) {
                 double length = 400;        // задаем величину круга, по идее можно вынести в отделбный метод
-                if ((i / 2) == 1){
+                if (i == 2){
                     length = length * 1.5;  // увеличваем дистанцию для второго круга
                 }
                 barriers[i] = new Treadmill("Препядствие №" + (i + 1), length); //передаем значение длины круга
             } else {
                 double length = 1.5;        // задаем высоту барьера, по идее можно вынести в отделбный метод
-                if ((i / 3) == 1){
+                if (i == 3){
                     length = length + 0.5;  // увеличваем высоту для второго барьера
                 }
                 barriers[i] = new Wall("Препядствие №" + (i + 1), length);     //передаем значение высоты
@@ -69,15 +69,15 @@ public class MainClass {
             boolean result = true;   // задаем переменную result для прохождения препядствий
             for (int j = 0; j < barriers.length; j++) {
                 if (athletes[i] instanceof Human) {
-                    result = barriers[j].move((Human) athletes[i]);
+                    result = barriers[j].move(athletes[i]);
                 }
                 if (athletes[i] instanceof Cat) {
-                    result = barriers[j].move((Cat) athletes[i]);
+                    result = barriers[j].move(athletes[i]);
                 }
                 if (athletes[i] instanceof Robot) {
-                    result = barriers[j].move((Robot) athletes[i]);
+                    result = barriers[j].move(athletes[i]);
                 }
-                if (!result) {      //условие если не пройдено хоть одно препядствие то выход из цикла
+                if (!result) {      //условие если не пройдено хоть одно препядствие, то выход из цикла
                     break;
                 }
             }

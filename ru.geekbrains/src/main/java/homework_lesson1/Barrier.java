@@ -1,6 +1,6 @@
 package homework_lesson1;
 
-// создаем абстрактный класс для
+// создаем абстрактный класс для препятствий
 public abstract class Barrier {
 
     private String name;
@@ -10,11 +10,7 @@ public abstract class Barrier {
     }
 
     //создаем методы для наших атлетов
-    public abstract boolean move(Human human);
-
-    public abstract boolean move(Cat cat);
-
-    public abstract boolean move(Robot robot);
+    public abstract boolean move(Actions someone);
 
     protected String getName(){   //передаем имя
         return name;
